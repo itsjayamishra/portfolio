@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Jaya Mishra, a Full Stack Web Developer skilled in HTML, CSS, JavaScript, Python, and Java. Explore my projects, skills, and certifications!">
+    <meta name="keywords" content="Jaya Mishra, web developer, full stack, HTML, CSS, JavaScript, Python, Java,c ,c# portfolio, BCA">
+    <meta name="author" content="Jaya Mishra">
+    <meta property="og:title" content="Jaya Mishra - Portfolio">
+    <meta property="og:description" content="Portfolio of Jaya Mishra, a Full Stack Web Developer skilled in HTML, CSS, JavaScript, Python, and Java.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:image" content="https://yourwebsite.com/profile-image.jpg">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous">
+    <title>Jaya Mishra - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #F6E7CB;
+            color: #000000;
+            scroll-behavior: smooth;
+        }
+        nav {
+            background: linear-gradient(180deg, #9c0e68, #DB7093);
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+            box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+        nav .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 1rem 0;
+            transition: transform 0.3s ease;
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: slideIn 0.5s ease-out forwards;
+        }
+        nav .profile-image:hover {
+            transform: scale(1.05);
+        }
+        nav a {
+            color: #000000;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            width: 80%;
+            text-align: center;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        nav a:nth-child(2) { animation: slideIn 0.5s ease-out 0.2s forwards; }
+        nav a:nth-child(3) { animation: slideIn 0.5s ease-out 0.3s forwards; }
+        nav a:nth-child(4) { animation: slideIn 0.5s ease-out 0.4s forwards; }
+        nav a:nth-child(5) { animation: slideIn 0.5s ease-out 0.5s forwards; }
+        nav a:nth-child(6) { animation: slideIn 0.5s ease-out 0.6s forwards; }
+        nav a:nth-child(7) { animation: slideIn 0.5s ease-out 0.7s forwards; }
+        nav a:nth-child(8) { animation: slideIn 0.5s ease-out 0.8s forwards; }
+        nav a:nth-child(9) { animation: slideIn 0.5s ease-out 0.9s forwards; }
+        nav a:hover {
+            background-color: #DB709380;
+            transform: scale(1.05) translateX(5px);
+            color: #000000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        nav a.active {
+            background-color: #DB709380;
+            color: #000000;
+            font-weight: bold;
+        }
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        .content-container {
+            margin-left: 270px;
+            padding: 2rem;
+        }
+        section {
+            max-width: 800px;
+            margin: 2rem auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.6s ease-out;
+            min-height: 50vh;
+        }
+        section.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .content-item {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border-left: 4px solid #D8A7B1;
+            background-color: #F6E7CB20;
+            border-radius: 5px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease-out;
+        }
+        section.active .content-item {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        section.active .content-item:nth-child(1) { transition-delay: 0.1s; }
+        section.active .content-item:nth-child(2) { transition-delay: 0.2s; }
+        section.active .content-item:nth-child(3) { transition-delay: 0.3s; }
+        section.active .content-item:nth-child(4) { transition-delay: 0.4s; }
+        section.active .content-item:nth-child(5) { transition-delay: 0.5s; }
+        section.active .content-item:nth-child(6) { transition-delay: 0.6s; }
+        .content-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        .content-item h3 {
+            color: #000000;
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+        }
+        .content-item p {
+            margin: 0;
+            color: #000000;
+        }
+        h1, h2 {
+            color: #D8A7B1;
+            font-weight: 600;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid #F6E7CB;
+            padding-bottom: 0.5rem;
+        }
+        .typewriter {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid #D8A7B1;
+            animation: typing 4s steps(40, end) infinite, blink 0.5s step-end infinite;
+        }
+        @keyframes typing {
+            0% { width: 0; }
+            50% { width: 100%; }
+            75% { width: 100%; }
+            100% { width: 0; }
+        }
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        .social-links a {
+            color: #D8A7B1;
+            font-size: 1.5rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .social-links a:hover {
+            color: #DB7093;
+            transform: scale(1.2);
+        }
+        .contact-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, #9c0e68, #DB7093);
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            animation: pulse 2s infinite ease-in-out;
+            transition: all 0.3s ease;
+        }
+        .contact-button:hover {
+            background: linear-gradient(45deg, #DB7093, #9c0e68);
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        .contact-button i {
+            font-size: 1.2rem;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        @media (max-width: 768px) {
+            nav {
+                width: 100%;
+                height: auto;
+                position: static;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 1rem;
+            }
+            nav .profile-image {
+                width: 80px;
+                height: 80px;
+                margin: 0.5rem;
+            }
+            nav a {
+                margin: 0.5rem;
+                width: auto;
+            }
+            .content-container {
+                margin-left: 0;
+                padding: 1rem;
+            }
+            section {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            .contact-button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            .typewriter {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav role="navigation" aria-label="Main navigation">
+        <img src="hi.jpg" alt="Jaya Mishra Profile Picture" class="profile-image">
+        <a href="#home" class="nav-link active" onclick="showSection('home')">Home</a>
+        <a href="#projects" class="nav-link" onclick="showSection('projects')">Projects</a>
+        <a href="#education" class="nav-link" onclick="showSection('education')">Education</a>
+        <a href="#skills" class="nav-link" onclick="showSection('skills')">Skills</a>
+        <a href="#internship" class="nav-link" onclick="showSection('internship')">Internship</a>
+        <a href="#certifications" class="nav-link" onclick="showSection('certifications')">Certifications</a>
+        <a href="#about" class="nav-link" onclick="showSection('about')">About</a>
+        <a href="#contact" class="nav-link" onclick="showSection('contact')">Contact</a>
+    </nav>
+
+    <div class="content-container">
+        <section id="home" aria-labelledby="home-heading">
+            <h1 id="home-heading">Jaya Mishra</h1>
+            <h2 class="typewriter">Full Stack Web Developer | BCA Pursuing</h2>
+            <p>Highly skilled and detail-oriented Full Stack Web Developer with expertise in designing and developing dynamic, user-friendly websites and applications. Proficient in HTML, CSS, Python, and JavaScript, with a strong ability to seamlessly integrate front-end aesthetics with robust back-end functionality. Adept at collaborating with cross-functional teams to deliver innovative solutions that drive user engagement and business success. Dedicated to staying updated on the latest technologies and trends to ensure top-quality outcomes for every project.</p>
+        </section>
+
+        <section id="projects" aria-labelledby="projects-heading">
+            <h2 id="projects-heading">Projects</h2>
+            <div class="content-item">
+                <h3>Text Converter</h3>
+                <p>A responsive web tool built with HTML, CSS, and JavaScript to convert text formats (e.g., case conversion, text manipulation). Features smooth animations for user interactions.</p>
+                <p><a href="https://your-text-converter-demo.com" target="_blank">Live Demo</a> | <a href="https://github.com/yourusername/text-converter" target="_blank">GitHub</a></p>
+            </div>
+            <div class="content-item">
+                <h3>Joke Generator</h3>
+                <p>A dynamic JavaScript-based app that generates random jokes, designed with a responsive layout and engaging animations for a fun user experience.</p>
+                <p><a href="https://your-joke-generator-demo.com" target="_blank">Live Demo</a> | <a href="https://github.com/yourusername/joke-generator" target="_blank">GitHub</a></p>
+            </div>
+            <div class="content-item">
+                <h3>Visiting Website</h3>
+                <p>A professional website (portfolio/business) built with HTML, CSS, and JavaScript, optimized for all devices with smooth transitions and animations.</p>
+                <p><a href="https://your-visiting-website-demo.com" target="_blank"></a> 
+            </div>
+            <div class="content-item">
+                <h3>E-commerce Website</h3>
+                <p>A responsive e-commerce platform built with HTML, CSS, and JavaScript, featuring dynamic product listings and user-friendly navigation.</p>
+                
+            </div>
+            <div class="content-item">
+                <h3>Foodie World</h3>
+                <p>A web application for food enthusiasts, developed using HTML, CSS, and JavaScript, with interactive features and responsive design.</p>
+                <p><a href="https://your-foodie-world-demo.com" target="_blank"></a> 
+            </div>
+            
+        </section>
+
+        <section id="education" aria-labelledby="education-heading">
+            <h2 id="education-heading">Education</h2>
+            <div class="content-item">
+                <h3>Bachelor of Computer Applications (BCA)</h3>
+                <p>Allenhouse Business School, Rooma, Kanpur | March 2023 - Present</p>
+                <p>Focusing on computer science fundamentals, programming, and web development.</p>
+            </div>
+        </section>
+
+        <section id="skills" aria-labelledby="skills-heading">
+            <h2 id="skills-heading">Skills</h2>
+            <div class="content-item">
+                <h3>
+                    <i class="fab fa-html5" style="color: #e34f26;"></i> HTML & 
+                    <i class="fab fa-css3-alt" style="color: #1572b6;"></i> CSS
+                </h3>
+                <p>Proficient in building responsive web applications with semantic, accessible structures and modern styling techniques.</p>
+            </div>
+            <div class="content-item">
+                <h3>
+                    <i class="fab fa-js-square" style="color: #f7df1e;"></i> JavaScript
+                </h3>
+                <p>Experienced in building interactive, dynamic web applications.</p>
+            </div>
+            <div class="content-item">
+                <h3>
+                    <i class="fab fa-python" style="color: #306998;"></i> Python
+                </h3>
+                <p>Proficient in Python with experience using libraries like NumPy and Pandas for data analysis and machine learning.</p>
+            </div>
+            <div class="content-item">
+                <h3>
+                    <i class="fas fa-robot" style="color: #8e44ad;"></i> Machine Learning
+                </h3>
+                <p>Solid understanding of machine learning algorithms, including regression and classification.</p>
+            </div>
+            <div class="content-item">
+                <h3>
+                    <i class="fas fa-users" style="color: #2ecc71;"></i> Agile Development
+                </h3>
+                <p>Efficient communicator and collaborative team player with experience working in Agile development environments.</p>
+            </div>
+            <div class="content-item">
+                <h3>
+                    <i class="fas fa-code" style="color: #a8b9cc;"></i> C & 
+                    <i class="fab fa-microsoft" style="color: #00a4ef;"></i> C#
+                </h3>
+                <p>Proficient in C and C# programming languages, with experience in developing desktop applications.</p>
+            </div>
+        </section>
+
+        <section id="internship" aria-labelledby="internship-heading">
+            <h2 id="internship-heading">Internship</h2>
+            <div class="content-item">
+                <h3>Machine Learning with Python</h3>
+                <p>Corporation Yhills - By Great Learning | July 2024 - September 2024</p>
+                <p>Completed a two-month non-paid internship, working on two machine learning projects with a team. Gained expertise in regression and classification algorithms and used Python libraries like NumPy and Pandas.</p>
+            </div>
+            <div class="content-item">
+                <h3>Web Developer</h3>
+                <p>Riverya Infotech</p>
+                <p>Gained hands-on experience in building responsive web applications using HTML, CSS, and JavaScript, contributing to real-world projects.</p>
+            </div>
+        </section>
+
+        <section id="certifications" aria-labelledby="certifications-heading">
+            <h2 id="certifications-heading">Certifications & Trainings</h2>
+            <div class="content-item">
+                <h3>Certifications</h3>
+                <p>
+                    - Data Structures in C (Great Learning)<br>
+                    - Fundamentals of Responsive, Generative AI (Microsoft)<br>
+                    - Python Programming (Great Learning)<br>
+                    - Participation Certification in Hackathon
+                </p>
+            </div>
+            <div class="content-item">
+                <h3>Trainings</h3>
+                <p>
+                    - Currently enrolled in Python and Kotlin trainings<br>
+                    - Completed IBM and Drone trainings
+                </p>
+            </div>
+        </section>
+
+        <section id="about" aria-labelledby="about-heading">
+            <h2 id="about-heading">About Me</h2>
+            <p>Hi, I'm Jaya Mishra!</p>
+            <p>I'm a passionate Full Stack Web Developer pursuing a BCA degree. With a strong foundation in HTML, CSS, JavaScript, Python, and Java, I enjoy building responsive and user-friendly web applications. My internships at Corporation Yhills and Riverya Infotech honed my skills in machine learning and web development, and I’m always eager to learn new technologies and improve my craft. Outside of coding, I value collaboration, creativity, and solving problems efficiently.</p>
+        </section>
+
+        <section id="contact" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contact</h2>
+            <div class="content-item">
+                <p>Email: jayamishra.workplace@gmail.com</p>
+                <p>Phone: +918953131262</p>
+                <p>Location: Naubasta, Kanpur</p>
+                <p>Connect with me on social media or check out my projects on GitHub!</p>
+                <div class="social-links">
+                    <a href="https://instagram.com/shaily_247" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/1ApTqSM7Ff/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/in/jaya-mishra-7b68682a0/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/itsjayamishra" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <a href="#contact" class="contact-button" onclick="showSection('contact')" aria-label="Go to contact section">
+        <i class="fas fa-envelope"></i> Contact Me
+    </a>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            document.querySelector(`a[href="#${sectionId}"]`).classList.add('active');
+        }
+
+        // Initialize Intersection Observer for scroll-based navigation
+        const sections = document.querySelectorAll('section');
+        const observerOptions = {
+            root: null,
+            threshold: 0.3, // Trigger when 30% of section is visible
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionId = entry.target.id;
+                    showSection(sectionId);
+                    history.replaceState(null, null, `#${sectionId}`);
+                    entry.target.classList.add('active');
+                } else {
+                    entry.target.classList.remove('active');
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Handle initial load
+        window.addEventListener('load', () => {
+            const hash = window.location.hash.replace('#', '') || 'home';
+            showSection(hash);
+            document.getElementById(hash).scrollIntoView({ behavior: 'smooth' });
+            document.getElementById(hash).classList.add('active');
+        });
+
+        // Handle nav link clicks
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const sectionId = link.getAttribute('href').replace('#', '');
+                showSection(sectionId);
+                document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
